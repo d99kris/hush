@@ -1,5 +1,10 @@
 Hush
 ====
+
+| **Linux + Mac** |
+|-----------------|
+| [![Build status](https://travis-ci.org/d99kris/hush.svg?branch=master)](https://travis-ci.org/d99kris/hush) |
+
 Hush suppresses stdout for commands executed successfully. It executes
 specified program and shows its output only after the program has exited.
 If the exit status is zero, only stderr from the program is outputted.
@@ -55,5 +60,5 @@ Hush is distributed under the BSD 3-Clause license. See LICENSE file.
 
 Keywords
 ========
-hush, linux, macos, os x, silenced execution, supressing stdout upon successful exit status.
+hush, linux, macos, os x, silenced execution, suppressing stdout upon successful exit status.
 
