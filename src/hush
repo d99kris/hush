@@ -71,6 +71,6 @@ fi
 # Cleanup
 rm -rf ${TMP}
 
-# Propogate exit status
+# Propagate exit status
 exit ${RV}
 
