@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# hush
+#
+# Copyright (C) 2017 Kristofer Berggren
+# All rights reserved.
+#
+# hush is distributed under the BSD 3-Clause license, see LICENSE for details.
+
+# Usage
+showusage()
+{
+  echo "Hush executes specified program and shows its output only"
+  echo "after the program has exited. If the exit status is zero, only"
+  echo "stderr from the program is outputted. If the exit status is non-zero"
+  echo "both stderr and stdout are outputted."
+  echo ""
+  echo "Usage: hush PROG [ARGS..]"
+  echo ""
+  echo "Examples:"
+  echo "hush make"
+  echo "        executes make and shows only warnings/stderr on successful"
+  echo "        build, and upon failed build it shows all make output."
+  echo ""
+  echo "Report bugs at https://github.com/d99kris/hush"
+  echo ""
+}
+
+# Version
+showversion()
+{
+  echo "hush v1.0"
+  echo ""
+  echo "Copyright (C) 2017 Kristofer Berggren"
+  echo ""
+  echo "hush is distributed under the BSD 3-Clause license."
+  echo ""
+  echo "Written by Kristofer Berggren"
+}
+
+# Arguments
+if [ "${1}" == "--help" ] ; then
+  showusage
+  exit 0
+elif [ "${1}" == "--version" ] ; then
+  showversion
+  exit 0
+elif [ "${#}" == "0" ] ; then
+  showusage
+  exit 1
+fi
+
+# Paths
+TMP=$(mktemp -d)
+BINDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Set up file descriptor for combined output
+exec 3<> ${TMP}/combined.log
+${BINDIR}/faketty ${@} > >(tee -a ${TMP}/stdout.log >&3) 2> >(tee -a ${TMP}/stderr.log >&3)
+RV="${?}"
+
+# Output result depending on exit code
+if [ "${RV}" == "0" ]; then
+  # On success, only output stderr
+  cat ${TMP}/stderr.log
+else
+  # On failure, output both
+  cat ${TMP}/combined.log
+fi
+
+# Cleanup
+rm -rf ${TMP}
+
+# Propogate exit status
+exit ${RV}
+

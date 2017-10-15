@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Environment
+TMPDIR=$(mktemp -d)
+
+# Test script
+cat <<EOF > ${TMPDIR}/test.sh
+>&1 echo "stdout"
+sleep 0.1
+>&2 echo "stderr"
+sleep 0.1
+>&1 echo "stdout"
+sleep 0.1
+>&2 echo "stderr"
+sleep 0.1
+exit 1
+EOF
+chmod +x ${TMPDIR}/test.sh
+
+# Reference
+cat << EOF > ${TMPDIR}/ref.txt
+stdout
+stderr
+stdout
+stderr
+EOF
+
+# Test
+./bin/hush ${TMPDIR}/test.sh > ${TMPDIR}/test.txt
+
+# Compare
+diff ${TMPDIR}/ref.txt ${TMPDIR}/test.txt
+RV="${?}"
+
+# Cleanup
+rm -rf ${TMPDIR}
+
+# Exit
+exit ${RV}
