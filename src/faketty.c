@@ -9,6 +9,7 @@
  */
 
 #define _BSD_SOURCE
+#define _DARWIN_C_SOURCE
 #define _DEFAULT_SOURCE
 #define _XOPEN_SOURCE 600
 #include <fcntl.h>
@@ -41,7 +42,7 @@ static void showusage(void)
          "Usage: faketty PROG [ARGS..]\n"
          "\n"
          "Examples:\n"
-         "./faketty cc 2> /tmp/err.txt ; cat /tmp/err.txt\n"
+         "faketty cc 2> /tmp/err.txt ; cat /tmp/err.txt\n"
          "        calls system C compiler without any input file specified, redirecting\n"
          "        its error message to a file, and then viewing the file content.\n"
          "\n"

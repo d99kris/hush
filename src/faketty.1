@@ -12,7 +12,7 @@ trick shell programs that they are being run in an interactive shell.
 It may also be used for automation purposes or for simply redirecting
 color output to files.
 .SH EXAMPLES
-\&./faketty cc 2> /tmp/err.txt ; cat /tmp/err.txt
+faketty cc 2> /tmp/err.txt ; cat /tmp/err.txt
 .IP
 calls system C compiler without any input file specified, redirecting
 its error message to a file, and then viewing the file content.
