@@ -61,4 +61,3 @@ Hush is distributed under the BSD 3-Clause license. See LICENSE file.
 Keywords
 ========
 hush, linux, macos, os x, silenced execution, suppressing stdout upon successful exit status.
-
