@@ -29,7 +29,7 @@ showusage()
 # Version
 showversion()
 {
-  echo "hush v1.0"
+  echo "hush v1.01"
   echo ""
   echo "Copyright (C) 2017 Kristofer Berggren"
   echo ""

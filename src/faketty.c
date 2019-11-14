@@ -52,7 +52,7 @@ static void showusage(void)
 
 static void showversion(void)
 {
-  printf("faketty v1.0\n"
+  printf("faketty v1.01\n"
          "\n"
          "Copyright (C) 2017 Kristofer Berggren\n"
          "\n"
