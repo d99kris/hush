@@ -3,7 +3,7 @@ Hush
 
 | **Linux + Mac** |
 |-----------------|
-| [![Build status](https://travis-ci.org/d99kris/hush.svg?branch=master)](https://travis-ci.org/d99kris/hush) |
+| [![Build status](https://travis-ci.com/d99kris/hush.svg?branch=master)](https://travis-ci.com/d99kris/hush) |
 
 Hush suppresses stdout for commands executed successfully. It executes
 specified program and shows its output only after the program has exited.
