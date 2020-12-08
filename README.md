@@ -1,9 +1,10 @@
 Hush
 ====
 
-| **Linux + Mac** |
-|-----------------|
-| [![Build status](https://travis-ci.com/d99kris/hush.svg?branch=master)](https://travis-ci.com/d99kris/hush) |
+| **Linux** | **Mac** |
+|-----------|---------|
+| [![Linux](https://github.com/d99kris/hush/workflows/Linux/badge.svg)](https://github.com/d99kris/hush/actions?query=workflow%3ALinux)
+| [![macOS](https://github.com/d99kris/hush/workflows/macOS/badge.svg)](https://github.com/d99kris/hush/actions?query=workflow%3AmacOS) |
 
 Hush suppresses stdout for commands executed successfully. It executes
 specified program and shows its output only after the program has exited.
