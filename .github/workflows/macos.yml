@@ -2,11 +2,11 @@ name: macOS
 
 on:
   pull_request:
-    branches:
-      - master
   push:
     branches:
       - master
+      - main
+      - dev/*
 
 jobs:
   mac-build:
