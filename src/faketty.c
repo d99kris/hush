@@ -1,7 +1,7 @@
 /*
  * faketty.c
  *
- * Copyright (C) 2017 Kristofer Berggren
+ * Copyright (C) 2017-2022 Kristofer Berggren
  * All rights reserved.
  * 
  * faketty is distributed under the BSD 3-Clause license, see LICENSE for details.
@@ -52,9 +52,9 @@ static void showusage(void)
 
 static void showversion(void)
 {
-  printf("faketty v1.01\n"
+  printf("faketty v1.02\n"
          "\n"
-         "Copyright (C) 2017 Kristofer Berggren\n"
+         "Copyright (C) 2017-2022 Kristofer Berggren\n"
          "\n"
          "faketty is distributed under the BSD 3-Clause license.\n"
          "\n"

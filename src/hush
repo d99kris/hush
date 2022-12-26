@@ -2,7 +2,7 @@
 
 # hush
 #
-# Copyright (C) 2017 Kristofer Berggren
+# Copyright (C) 2017-2022 Kristofer Berggren
 # All rights reserved.
 #
 # hush is distributed under the BSD 3-Clause license, see LICENSE for details.
@@ -29,9 +29,9 @@ showusage()
 # Version
 showversion()
 {
-  echo "hush v1.01"
+  echo "hush v1.02"
   echo ""
-  echo "Copyright (C) 2017 Kristofer Berggren"
+  echo "Copyright (C) 2017-2022 Kristofer Berggren"
   echo ""
   echo "hush is distributed under the BSD 3-Clause license."
   echo ""
